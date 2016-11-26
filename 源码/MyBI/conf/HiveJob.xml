@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<Job type="elt_db">
+		<hql>insert overwrite table t_link2 select * from (select *,row_number() over (partition by id order by crt_time desc) num from t_link) t where t.num=1;</hql> <!-- 数据去重 -->
+	</Job>
+
+	<Job type="analusis">                                                                   <!--  表示可执行的HQL -->
+		<hql> select * from t_link where crt_time > "\$dt 10:00:00" </hql>                  <!-- 可执行的HQL语句  $dt为输入的时间信息 -->
+	</Job>
+</root>

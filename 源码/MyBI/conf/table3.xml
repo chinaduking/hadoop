@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<sqoop-shell type="export">
+		<param key="connect">jdbc:mysql://192.168.0.144:3306/db_blog</param> <!-- 数据库连接地址 -->
+		<param key="username">root</param> <!-- 数据库用户名 -->
+		<param key="password">123456</param> <!-- 数据库密码 -->
+		<param key="table">test1</param>  <!-- 导入到mysql中的表名 -->
+		<param key="export-dir">/user/hive/warehouse/test1</param> <!-- HDFS的目标存储路径 -->
+		<param key="input-fields-terminated-by">'\t'</param> <!-- 列分隔符 -->
+		<param key="num-mappers">1</param>   <!-- 使用map任务个数 -->
+	</sqoop-shell>
+</root>

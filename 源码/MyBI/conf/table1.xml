@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<sqoop-shell type="import">
+		<param key="connect">jdbc:mysql://192.168.0.144:3306/db_blog</param>   <!-- 数据库连接地址 -->
+		<param key="username">root</param><!-- 数据库用户名 -->
+		<param key="password">123456</param><!-- 数据库密码 -->
+		<param key="table">t_link</param><!-- 数据库中待导出的表名 -->
+		<param key="target-dir">/user/hadoop/t_link</param> <!-- HDFS的目标存储路径 -->
+		<param key="hive-import"></param>                  
+		<param key="create-hive-table"></param>   <!-- 在hive中新建一张同名同结构的表 -->
+		<param key="hive-overwrite"></param> <!-- 覆盖原来以存在的表 -->
+		<param key="num-mappers">1</param>   <!-- 使用map任务个数 -->
+		<param key="split-by">id</param> <!-- 将表按照id水平切分交给map处理  -->
+	</sqoop-shell>
+</root>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<plan type="importtype">
+		<value>add</value>    <!-- 增量导入或者全导入 -->
+	</plan>
+
+	<task type="all">
+		<table>table1</table> <!-- 数据库中需要增量导入的第一张表名 -->
+	</task>
+	
+	<task type="add">
+		<table>table2</table> <!-- 数据库中需要增量导入的第一张表名 -->
+	</task>
+	
+</root>
